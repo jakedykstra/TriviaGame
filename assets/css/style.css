@@ -1,0 +1,67 @@
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1.7;
+    color: rgb(209, 32, 32);
+    border: 2.5rem solid rgba(255, 255, 255, 0.95);
+    height: 100vh;
+    padding: 3rem;
+    box-sizing: border-box;
+    background-image: url(https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/episodes/1/game-of-thrones-1-3000x1688.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg);
+    background-size: cover;
+    
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.75);
+    border: .6rem solid red;
+    padding: 1rem 3rem;
+    margin: 2rem 5rem;
+    box-shadow: .2rem;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 800;
+}
+
+.countdown {
+    text-align: center;
+}
+
+.question {
+    font-size: 2.6rem;
+}
+
+.multiple-choice {
+    font-size: 2.6rem;
+}
+
+.choice-1 button:hover {
+    color: blue; 
+}
+
+.choice-2 button:hover {
+    color: blue; 
+}
+
+.choice-3 button:hover {
+    color: blue; 
+}
+
+.choice-4 button:hover {
+    color: blue; 
+}
+
+/* Make a shadow box, have it animate in, fade out for next question? */
