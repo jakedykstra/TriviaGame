@@ -45,7 +45,6 @@ var question = 0;
 var quizEnd = false;
 var countdown = 10;
 var percentage = parseInt(correct) / 6;
-//!!!!!! place Audio here
 
 //user input
 $(this).on('click', function () {
@@ -53,32 +52,39 @@ $(this).on('click', function () {
     checker();
 })
 
-
 // function to check if correct and make correct v. wrong answer actions
 function checker() {
-    if (countdown = 0) {
-        alert("You ran out of time!");
-        wrong++;
-    } else {
-        if (this.value = true) {
+        if (this.value == true) {
             correct++;
             $(this).css('color', 'green');
         } else {
             wrong++;
             $(this).css('color', 'red');
         }
-    }
-
     question++;
-    finalFrame();
-    nextQuestion();
-}
+    if (question == 6){
+        finalFrame();
+    } else {
+        nextQuestion();
+    }
+    }
 
 //use timeSet to wait a few moments before next question
 function nextQuestion() {
     setTimeout(() => {
         update();
+        var timer = setInterval(countdownTimer, 1000);
     }, 2000);
+}
+
+// function for final frame
+function finalFrame() {
+        alert("game over!")
+        $('.countdown').remove();
+        $('.question').remove();
+        $('.multiple-choice').remove();
+        $('.game').append(`<div class="final">Correct: ${correct} <br>Wrong: ${wrong} <br>Score: ${percentage}`)
+        //will need to do some appending and removing here
 }
 
 // function for update
@@ -95,32 +101,21 @@ function update() {
     $('.choice-2').attr('value', value[1]);
     $('.choice-3').attr('value', value[2]);
     $('.choice-4').attr('value', value[3]);
-}
-
-// function for final frame
-function finalFrame() {
-    if (question == 6) {
-        alert("game over!")
-        $('.countdown').remove();
-        $('.question').remove();
-        $('.multiple-choice').remove();
-        $('.game').append(`<div class="final">Correct: ${correct} <br>Wrong: ${wrong} <br>Score: ${percentage}`)
-        //will need to do some appending and removing here
-    }
+    countdown = 11;
 }
 
 // function for question timer countdown from 10
-function timer() {
-    setInterval(function countdownTimer() {
-        countdown--;
-        if (countdown == 0) {
-            clearInterval(countdownTimer);
-        } else {
-            $('.countdown').text(`Time Remaining: ${countdown} seconds`)
-        };
-    }, 1000)
+var timer = setInterval(countdownTimer, 1000);
 
-    if ($('.multiple-choice').on('click')) {
-        clearInterval(countdownTimer);
+function countdownTimer() {
+    if (countdown == 0) {
+        clearInterval(timer);
+        $('.countdown').text(`Times Up!`)
+        wrong++;
+        question++
+        nextQuestion();
+    } else {
+        countdown--;
+        $('.countdown').text(`Time Remaining: ${countdown} seconds`)
     }
 }

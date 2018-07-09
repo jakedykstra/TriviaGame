@@ -12,7 +12,7 @@ body {
     font-size: 4rem;
     line-height: 1.7;
     color: rgb(209, 32, 32);
-    border: 2.5rem solid rgba(255, 255, 255, 0.95);
+    border: 2.5rem solid rgba(255, 255, 255, 0.9);
     height: 100vh;
     padding: 3rem;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.9);
     border: .6rem solid red;
     padding: 1rem 3rem;
     margin: 2rem 5rem;
@@ -41,11 +41,27 @@ h1{
 }
 
 .question {
-    font-size: 2.6rem;
+    margin-top: 5rem;
+    font-size: 4.5rem;
 }
 
 .multiple-choice {
     font-size: 2.6rem;
+    display: flex;
+}
+
+.column-a {
+       
+}
+
+.column-b {
+
+}
+
+button {
+    margin: 1rem 3rem;
+    padding: .9rem .6rem;
+    font-size: 3rem;
 }
 
 .choice-1 button:hover {
@@ -57,7 +73,8 @@ h1{
 }
 
 .choice-3 button:hover {
-    color: blue; 
+    color: blue;
+    border: blue; 
 }
 
 .choice-4 button:hover {
